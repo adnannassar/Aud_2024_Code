@@ -3,18 +3,20 @@ package LinkedList.SimpleLinkedList;
 
 public class SimpleLinkedList {
     // add DONE!
-    // add value at index
-
     // isEmpty DONE!
-
     // print DONE!
-
     // search value DONE!
     // get value by index DONE!
     // get index by value DONE!
-
     // sort
+
+    // TODO
+    // add value at index
+    // TODO
     // remove value
+
+
+
 
 
     private Node head ;
