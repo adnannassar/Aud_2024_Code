@@ -1,11 +1,9 @@
 package Komplexität;
 
-import Algorithmen.Beispiele.Fakultät;
-
 public class Praktikum_005 {
 
     public static void main(String[] args) {
-        int n = 1000;
+        int n = 100;
         Zeitmessung zeitmessung = new Zeitmessung();
         StopUhr stopUhr = new StopUhr();
 
@@ -29,11 +27,5 @@ public class Praktikum_005 {
         zeitmessung.func0(n);
         stopUhr.stop();
         System.out.println("Für n = " + n + " Fun0 (O(1))) hat " + (stopUhr.getDuration() / 1000)  + " ms gedauert.");
-
     }
-
-
-
-
-
 }

@@ -16,9 +16,6 @@ public class SimpleLinkedList {
     // remove value
 
 
-
-
-
     private Node head ;
 
     public void add(int value) {
@@ -49,7 +46,6 @@ public class SimpleLinkedList {
             pointer = pointer.next;
         }
         System.out.print(pointer.value + " --> null\n");
-
     }
 
     public boolean search(int value){
@@ -92,7 +88,7 @@ public class SimpleLinkedList {
         }
    }
 
-    public int getIndexByValue (int value){
+   public int getIndexByValue (int value){
         if(isEmpty()){
             return -1;
         }

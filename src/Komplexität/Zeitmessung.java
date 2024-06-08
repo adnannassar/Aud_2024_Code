@@ -7,7 +7,7 @@ public class Zeitmessung
 		return Math.random(); // o(1)
 	}
 
-
+	// O(1)
 	public double func0(int n)
 	{
 		return 100 * n;

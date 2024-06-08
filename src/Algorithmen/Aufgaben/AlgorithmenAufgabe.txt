@@ -1,9 +1,9 @@
 	1. (Fibonacci) Write an algorithm to produce the first 15 numbers of this series: 1,1,2,3,5,8,13,21…
 	Lösung (Shahd):
-	    a.define nr1 <- 1
-	    b.define nr2 <- 1
-	    c.define nr3 <- 0
-	    d.1.eingabe (n)
+	    a.1.eingabe (n)
+	    b.define nr1 <- 1
+	    c.define nr2 <- 1
+	    d.1.define nr3 <- 0
 	    d.2.ausgabe (nr1)
 	    d.3.ausgabe (nr2)
 	    e.for x <- 0 to x <= n do
@@ -23,7 +23,7 @@
 	    f. end for
 	    g. return x
 
-	2. Write an algorithm raise any number to the third power (x^3 --> x * x * x)
+	2. Write an algorithm raise any number to the third power (x^3 --> x * x * x) 2, --> 2^3 = 2*2*2 = 8
 	    Lösing (Sheam):
 	        a. einlesen(x)
 	        b. erg <- x * x * x

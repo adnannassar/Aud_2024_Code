@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Ficonacii {
     public static void main(String[] args) {
+        // lösungShahd();
         // lösungZana();
         // thirdPower();
         System.out.println("2^3 = "+ raiseAnyNumber(2, 3));
@@ -41,8 +42,10 @@ public class Ficonacii {
     }
 
     public static void lösungShahd() {
+        Scanner scanner = new Scanner(System.in);
         System.out.print("n: ");
-        int n = new Scanner(System.in).nextInt();
+        int n = scanner.nextInt();
+
         // 1,1,2,3,5,8,13,21…
         int nr1 = 1, nr2 = 1;
         int nr3;

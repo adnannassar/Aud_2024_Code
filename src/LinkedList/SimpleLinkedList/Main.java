@@ -7,12 +7,14 @@ public class Main {
         System.out.println("isEmpty() --> " + simpleLinkedList.isEmpty());
         System.out.println("Get Value from index (0) --> " + simpleLinkedList.getValueByIndex(0)); // -1
         System.out.println("Get Index by value (0) --> " + simpleLinkedList.getValueByIndex(0)); // -1
+
         simpleLinkedList.add(1);
         simpleLinkedList.add(2);
         simpleLinkedList.add(3);
         simpleLinkedList.add(4);
         simpleLinkedList.add(5);
         simpleLinkedList.add(6);
+
         System.out.println("\nAfter Add: ");
         System.out.println("isEmpty() --> " + simpleLinkedList.isEmpty());
         simpleLinkedList.print();
