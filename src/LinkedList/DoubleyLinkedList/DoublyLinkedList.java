@@ -1,24 +1,28 @@
-package LinkedList.SimpleLinkedList;
+package LinkedList.DoubleyLinkedList;
 
 
-public class SimpleLinkedList {
+public class DoublyLinkedList {
     private Node head;
+    private Node end;
     private int size;
 
+
     public void addValueAtIndex(int value, int index) {
-        Node toBeAdded = new Node(value, null);
+        Node toBeAdded = new Node(value, null, null);
         size++;
         if (index < 0) {
             return;
         }
         if (isEmpty() || size == 0) {
             head = toBeAdded;
+            end = toBeAdded;
         }
         if (index == 0) {
             if (isEmpty()) {
                 head = toBeAdded;
             } else {
                 toBeAdded.next = head;
+                head.previous = toBeAdded;
                 head = toBeAdded;
             }
         }
@@ -33,21 +37,25 @@ public class SimpleLinkedList {
                 i++;
             }
             toBeAdded.next = pointer.next;
+            toBeAdded.previous = pointer;
             pointer.next = toBeAdded;
+            toBeAdded.next.previous = toBeAdded;
         }
     }
 
     public void add(int value) {
-        Node toBeAdded = new Node(value, null);
+        Node toBeAdded = new Node(value, null, null);
         size++;
         if (isEmpty()) {
-            head = toBeAdded;
+            head = end = toBeAdded;
         } else {
             Node pointer = head;
             while (pointer.next != null) {
                 pointer = pointer.next;
             }
             pointer.next = toBeAdded;
+            toBeAdded.previous = pointer;
+            end = toBeAdded;
         }
     }
 
@@ -77,6 +85,9 @@ public class SimpleLinkedList {
             return false;
         }
         if (head.value == value) {
+            return true;
+        }
+        if(end.value == value){
             return true;
         }
         Node pointer = head;
@@ -133,16 +144,15 @@ public class SimpleLinkedList {
 
     public void remove(int value) {
         if (!isEmpty()) {
-            if(head.value == value) {
+            if (head.value == value) {
                 head = head.next;
             }
             Node pointer = head;
-            Node before_Pointer = head;
             while (pointer != null) {
                 if (pointer.value == value) {
-                    before_Pointer.next = pointer.next;
+                    pointer.previous.next = pointer.next;
+                    pointer.next.previous = pointer.previous;
                 }
-                before_Pointer = pointer;
                 pointer = pointer.next;
             }
         }

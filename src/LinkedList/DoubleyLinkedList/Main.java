@@ -1,8 +1,8 @@
-package LinkedList.SimpleLinkedList;
+package LinkedList.DoubleyLinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        SimpleLinkedList simpleLinkedList = new SimpleLinkedList();
+        DoublyLinkedList simpleLinkedList = new DoublyLinkedList();
         System.out.println("Before Add: ");
         System.out.println("isEmpty() --> " + simpleLinkedList.isEmpty());
         System.out.println("Get Value from index (0) --> " + simpleLinkedList.getValueByIndex(0)); // -1
@@ -36,7 +36,7 @@ public class Main {
         simpleLinkedList.addValueAtIndex(2,1);
         simpleLinkedList.addValueAtIndex(4,3);
         simpleLinkedList.addValueAtIndex(7,6);
-        simpleLinkedList.addValueAtIndex(8,100);
+        // simpleLinkedList.addValueAtIndex(8,100);
         System.out.println("\nAfter Add Value at index: ");
         simpleLinkedList.print();
 
