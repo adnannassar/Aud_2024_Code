@@ -1,12 +1,12 @@
 package LinkedList.SimpleLinkedList;
 
 
-public class GenericSimpleLinkedList<T> {
-    private Node head;
+public class GenericSimpleLinkedList<T extends Comparable<T>> {
+    private NodeGeneric head;
     private int size;
 
     public void addValueAtIndex(T value, int index) {
-        Node toBeAdded = new Node(value, null);
+        NodeGeneric toBeAdded = new NodeGeneric(value, null);
         size++;
         if (index < 0) {
             return;
@@ -26,7 +26,7 @@ public class GenericSimpleLinkedList<T> {
             add(value);
         }
         if (index > 0 && !isEmpty() && size > 0 && index < size) {
-            Node pointer = head;
+            NodeGeneric pointer = head;
             int i = 0;
             while (i != index && pointer.next != null) {
                 pointer = pointer.next;
@@ -38,12 +38,12 @@ public class GenericSimpleLinkedList<T> {
     }
 
     public void add(T value) {
-        Node toBeAdded = new Node(value, null);
+        NodeGeneric toBeAdded = new NodeGeneric(value, null);
         size++;
         if (isEmpty()) {
             head = toBeAdded;
         } else {
-            Node pointer = head;
+            NodeGeneric pointer = head;
             while (pointer.next != null) {
                 pointer = pointer.next;
             }
@@ -63,15 +63,30 @@ public class GenericSimpleLinkedList<T> {
         return this.size;
     }
 
+    public void sort() {
+        if (!isEmpty()) {
+            NodeGeneric pointer = head;
+            while (pointer.next != null) {
+                int compareResult = pointer.value.compareTo(pointer.next.value);
+                if (compareResult > 0) {
+                    NodeGeneric<T> temp = pointer;
+                    pointer = pointer.next;
+                    pointer.next = temp;
+                }
+                pointer = pointer.next;
+            }
+        }
+
+    }
 
     @Override
     public String toString() {
         String erg = "[";
         Iterator<T> iterator = iterator();
-        while (iterator.hasNext() ) {
+        while (iterator.hasNext()) {
             erg += iterator.next() + ", ";
         }
-        return erg +  "]" ;
+        return erg + "]";
     }
 
     public boolean search(T value) {
@@ -81,7 +96,7 @@ public class GenericSimpleLinkedList<T> {
         if (head.value == value) {
             return true;
         }
-        Node pointer = head;
+        NodeGeneric pointer = head;
         while (pointer.next != null) {
             if (pointer.value == value) {
                 return true;
@@ -98,7 +113,7 @@ public class GenericSimpleLinkedList<T> {
             if (index == 0) {
                 return (T) head.value;
             } else {
-                Node pointer = head;
+                NodeGeneric pointer = head;
                 int i = 0;
                 while (i != index && pointer.next != null) {
                     pointer = pointer.next;
@@ -121,7 +136,7 @@ public class GenericSimpleLinkedList<T> {
         if (value == head.value) {
             return 0;
         }
-        Node pointer = head;
+        NodeGeneric pointer = head;
         int i = 0;
         while (pointer.next != null) {
             if (pointer.value == value) {
@@ -138,8 +153,8 @@ public class GenericSimpleLinkedList<T> {
             if (head.value == value) {
                 head = head.next;
             }
-            Node pointer = head;
-            Node before_Pointer = head;
+            NodeGeneric pointer = head;
+            NodeGeneric before_Pointer = head;
             while (pointer != null) {
                 if (pointer.value == value) {
                     before_Pointer.next = pointer.next;

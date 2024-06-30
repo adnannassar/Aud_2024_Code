@@ -1,9 +1,9 @@
 package LinkedList.SimpleLinkedList;
 
-public class ListIterator<T> implements Iterator<T> {
-    private Node<T> listHead;
+public class ListIterator<T extends Comparable<T>> implements Iterator<T> {
+    private NodeGeneric<T> listHead;
 
-    public ListIterator(Node<T> listHead) {
+    public ListIterator(NodeGeneric<T> listHead) {
         this.listHead = listHead;
     }
 
